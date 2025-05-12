@@ -5,135 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Charity Connect India</title>
   <style>
-    :root {
-      --bg: aliceblue;
-      --accent: #007272; /* dark teal */
-    }
+  :root {
+    --bg: aliceblue;
+    --accent: #007272; /* dark teal */
+  }
 
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      background-color: var(--bg);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: aliceblue;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+  body {
+    background-color: var(--bg); /* Just aliceblue background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-    header {
-      background-color: var(--accent);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+  header {
+    background-color: var(--accent);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    margin: 0.3rem 0.6rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--accent);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav button.active {
+    border-bottom: 2px solid var(--accent);
+    font-weight: bold;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 2rem 1rem;
+    flex: 1;
+  }
+
+  .tab-content.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .org-card {
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+
+  .org-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .org-title {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .org-desc {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .visit-btn {
+    padding: 0.4rem 1rem;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  footer {
+    background-color: var(--accent);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+
+  @media (max-width: 600px) {
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background-color: white;
-      padding: 0.5rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav button {
-      background: none;
-      border: none;
-      margin: 0.3rem 0.6rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      color: var(--accent);
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-    }
-
-    nav button.active {
-      border-bottom: 2px solid var(--accent);
-      font-weight: bold;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 2rem 1rem;
-      flex: 1;
-    }
-
-    .tab-content.active {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      flex-direction: column;
     }
 
     .org-card {
-      background-color: rgba(255, 255, 255, 0.92);
       padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      position: relative;
     }
 
-    .org-card:hover {
-      transform: translateY(-5px);
+    .tab-content {
+      padding: 1rem 0.5rem;
     }
-
-    .org-title {
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
-
-    .org-desc {
-      font-size: 0.9rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
-
-    .visit-btn {
-      padding: 0.4rem 1rem;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    footer {
-      background-color: var(--accent);
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: auto;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-
-      .org-card {
-        padding: 1rem;
-      }
-
-      .tab-content {
-        padding: 1rem 0.5rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <header>
