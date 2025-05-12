@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charity Connect India</title>
+  <style>
+    :root {
+      --bg: aliceblue;
+      --accent: #007272; /* dark teal */
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: aliceblue;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      background-color: var(--accent);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: white;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      margin: 0.3rem 0.6rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: var(--accent);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav button.active {
+      border-bottom: 2px solid var(--accent);
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem 1rem;
+      flex: 1;
+    }
+
+    .tab-content.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .org-card {
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .org-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .org-title {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .org-desc {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .visit-btn {
+      padding: 0.4rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .org-card {
+        padding: 1rem;
+      }
+
+      .tab-content {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Charity Connect India</h1>
+    <p>Discover trusted charities across different causes</p>
+  </header>
+
+  <nav>
+    <button class="tab active" onclick="switchTab(0)">Most Trusted</button>
+    <button class="tab" onclick="switchTab(1)">Medical Care</button>
+    <button class="tab" onclick="switchTab(2)">Educational</button>
+    <button class="tab" onclick="switchTab(3)">Homeless</button>
+    <button class="tab" onclick="switchTab(4)">Animal Welfare</button>
+    <button class="tab" onclick="switchTab(5)">Disaster Relief</button>
+    <button class="tab" onclick="switchTab(6)">Elderly Welfare</button>
+  </nav>
+
+  <!-- Tab Contents -->
+  <main>
+    <section class="tab-content active">
+      <!-- Most Trusted -->
+      <div class="org-card">
+        <div class="org-title">Team Everest</div>
+        <div class="org-desc">Change a child's life now!We inspire everyone to volunteer and create a culture of giving.</div>
+        <a class="visit-btn" href="https://www.teameverest.ngo/donate" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+        <div class="org-title">Goonj</div>
+        <div class="org-desc">A powerful grassroots movement using urban surplus for rural development across India.</div>
+        <a class="visit-btn" href="https://goonj.org/donate/" target="_blank">Visit</a>
+      </div>
+    <div class="org-card">
+  <div class="org-title">The Akshaya Patra Foundation</div>
+  <div class="org-desc">Provides mid-day meals to millions of underprivileged children across India to ensure access to education and proper nutrition.</div>
+  <a class="visit-btn" href="https://www.akshayapatra.org/onlinedonations" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Smile Foundation</div>
+  <div class="org-desc">Focuses on empowering underprivileged children, youth, and women through education, healthcare, and skill development programs.</div>
+  <a class="visit-btn" href="https://www.smilefoundationindia.org/donation/#donate-online   " target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">CRY - Child Rights and You</div>
+  <div class="org-desc">Focuses on child welfare by providing healthcare, education, and protecting the rights of underprivileged children across India.</div>
+  <a class="visit-btn" href="https://www.cry.org/donate" target="_blank">Visit</a>
+</div>
+    </section>
+
+    <section class="tab-content">
+      <!-- Medical -->
+      <div class="org-card">
+        <div class="org-title">Cancer Patients Aid Association</div>
+        <div class="org-desc">Supports poor cancer patients with treatment, food, lodging and medical aid.</div>
+        <a class="visit-btn" href="https://cancer.org.in/donate/" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+        <div class="org-title">Kailash Satyarthi Foundation</div>
+        <div class="org-desc">Protects children’s health and rights, including medical support and rescue from abuse.</div>
+        <a class="visit-btn" href="https://satyarthi.org.in/donate/" target="_blank">Visit</a>
+      </div>
+      
+  
+
+<div class="org-card">
+  <div class="org-title">Sankara Eye Foundation India</div>
+  <div class="org-desc">Provides free high-quality eye surgeries to the poor through a sustainable rural outreach model.</div>
+  <a class="visit-btn" href="https://sankaraeye.com/donate/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Narayan Seva Sansthan</div>
+  <div class="org-desc">Offers free medical surgeries, rehab, and education to the physically challenged and underprivileged.</div>
+  <a class="visit-btn" href="https://www.narayanseva.org/donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Indian Cancer Society</div>
+  <div class="org-desc">Supports cancer patients with detection, diagnosis, treatment aid, and rehabilitation services.</div>
+  <a class="visit-btn" href="https://www.indiancancersociety.org/how-you-can-help/donate" target="_blank">Visit</a>
+</div>
+
+    </section>
+    
+
+    <section class="tab-content">
+      <!-- Education -->
+      <div class="org-card">
+        <div class="org-title">Akshaya Patra</div>
+        <div class="org-desc">Provides nutritious school meals to underprivileged children to keep them in school.</div>
+        <a class="visit-btn" href="https://www.akshayapatra.org/onlinedonations" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+        <div class="org-title">Pratham</div>
+        <div class="org-desc">One of India’s largest education NGOs working to improve learning outcomes in children.</div>
+        <a class="visit-btn" href="https://pratham.org/donation/" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+  <div class="org-title">Teach For India</div>
+  <div class="org-desc">Builds a movement of leaders to provide excellent education to all children across India.</div>
+  <a class="visit-btn" href="https://www.teachforindia.org/donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Bhumi</div>
+  <div class="org-desc">Empowers underprivileged children through quality education and volunteer-driven programs.</div>
+  <a class="visit-btn" href="https://www.bhumi.ngo/bhumi-donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Vidya India</div>
+  <div class="org-desc">Provides holistic education and vocational training to underprivileged children and youth.</div>
+  <a class="visit-btn" href="https://vidya-india.org/donate/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Isha Vidhya</div>
+  <div class="org-desc">Supports rural education by operating schools and providing scholarships in underserved communities.</div>
+  <a class="visit-btn" href="https://ishavidhya.org/donate/" target="_blank">Visit</a>
+</div>
+
+    </section>
+
+    <section class="tab-content">
+      <!-- Homeless -->
+      <div class="org-card">
+        <div class="org-title">Snehalaya</div>
+        <div class="org-desc">Supports homeless women and children, offering shelter, healthcare and education.</div>
+        <a class="visit-btn" href="https://www.snehalaya.org/donate" target="_blank">Visit</a>
+      </div>
+
+
+<div class="org-card">
+  <div class="org-title">Uday Foundation</div>
+  <div class="org-desc">Supports homeless families with shelter, food, clothing, and free medical care.</div>
+  <a class="visit-btn" href="https://www.udayfoundation.org/donate/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Aashray Adhikar Abhiyan</div>
+  <div class="org-desc">Dedicated to the rights and rehabilitation of homeless people in Delhi through shelter and advocacy.</div>
+  <a class="visit-btn" href="https://pages.razorpay.com/pl_IkWAOpUCW49MeH/view" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Project WHY</div>
+  <div class="org-desc">Supports slum dwellers and street children with education, nutrition, and shelter programs.</div>
+  <a class="visit-btn" href="https://projectwhy.org/donate/" target="_blank">Visit</a>
+</div>
+<div class="org-card">
+  <div class="org-title">The Homeless Foundation</div>
+  <div class="org-desc">Based in Mumbai, this NGO supports homeless individuals through education, nutrition, health services, and vocational training.</div>
+  <a class="visit-btn" href="https://www.thlf.org/donate-now.html" target="_blank">Visit</a>
+</div>
+
+    </section>
+
+    <section class="tab-content">
+      <!-- Animal Welfare -->
+      <div class="org-card">
+        <div class="org-title">People for Animals (PFA)</div>
+        <div class="org-desc">India's largest animal welfare org rescuing and rehabilitating sick/injured animals.</div>
+        <a class="visit-btn" href="https://www.peopleforanimalsindia.org/donate" target="_blank">Visit</a>
+      </div>
+      
+
+<div class="org-card">
+  <div class="org-title">Animal Aid Unlimited</div>
+  <div class="org-desc">Rescues and treats street animals in India and provides them with medical care and rehabilitation.</div>
+  <a class="visit-btn" href="https://www.animalaidunlimited.org/donation/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Wildlife SOS</div>
+  <div class="org-desc">Works to protect India's wildlife through rescue operations, rehabilitation, and conservation projects.</div>
+  <a class="visit-btn" href="https://wildlifesos.org/donate/" target="_blank">Visit</a>
+</div>
+<div class="org-card">
+  <div class="org-title">Stray Animal Foundation India (SAFI)</div>
+  <div class="org-desc">Provides grants and support to local shelters, rescues, and community outreach programs to improve the lives of stray animals across India.</div>
+  <a class="visit-btn" href="https://strayanimalfoundationindia.org/india-donations/" target="_blank">Visit</a>
+</div>
+<div class="org-card">
+  <div class="org-title">In Defense of Animals India (IDA India)</div>
+  <div class="org-desc">A grassroots organization dedicated to protecting the rights of all animals through rescue operations, advocacy, and education.</div>
+  <a class="visit-btn" href="https://www.idaindia.org/donate" target="_blank">Visit</a>
+</div>
+
+
+
+    </section>
+
+    <section class="tab-content">
+      <!-- Disaster Relief -->
+      <div class="org-card">
+        <div class="org-title">SEEDS India</div>
+        <div class="org-desc">Provides emergency response and disaster preparedness across vulnerable areas.</div>
+        <a class="visit-btn" href="https://www.seedsindia.org/donation/" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+  <div class="org-title">Goonj</div>
+  <div class="org-desc">Works on disaster relief by providing essential supplies like clothing, food, and other materials to communities in need.</div>
+  <a class="visit-btn" href="https://goonj.org/donate/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Sewa International</div>
+  <div class="org-desc">Provides disaster relief, rehabilitation, and long-term recovery for communities affected by natural disasters.</div>
+  <a class="visit-btn" href="https://sewausa.org/donate/" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Indian Red Cross Society</div>
+  <div class="org-desc">Offers immediate disaster relief, including medical care, shelter, and food to victims of disasters across India.</div>
+  <a class="visit-btn" href="https://indianredcross.org/ircs/donatenow" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Oxfam India</div>
+  <div class="org-desc">Provides relief in disaster-affected areas by delivering essential services and aiding the rebuilding process.</div>
+  <a class="visit-btn" href="https://www.oxfamindia.org/donate" target="_blank">Visit</a>
+</div>
+
+    </section>
+
+    <section class="tab-content">
+      <!-- Elderly Welfare -->
+      <div class="org-card">
+        <div class="org-title">HelpAge India</div>
+        <div class="org-desc">Cares for India’s elderly poor through healthcare, support and advocacy.</div>
+        <a class="visit-btn" href="https://www.helpageindia.org/donate/" target="_blank">Visit</a>
+      </div>
+      <div class="org-card">
+  <div class="org-title">HelpAge India</div>
+  <div class="org-desc">Supports elderly people by providing healthcare, emotional care, and financial assistance for the elderly in need.</div>
+  <a class="visit-btn" href="https://www.helpageindia.org/donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Elder Care</div>
+  <div class="org-desc">Offers support for elderly individuals in the form of home care, emotional counseling, and financial aid.</div>
+  <a class="visit-btn" href="https://www.eldercare.org.in/donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Dignity Foundation</div>
+  <div class="org-desc">Empowers senior citizens by offering opportunities for health, education, and social integration.</div>
+  <a class="visit-btn" href="https://www.dignityfoundation.org/donate" target="_blank">Visit</a>
+</div>
+
+<div class="org-card">
+  <div class="org-title">Sampoorna Sewa Foundation</div>
+  <div class="org-desc">Provides support services for elderly individuals, including medical care, shelter, and psychological support.</div>
+  <a class="visit-btn" href="https://www.sampoorna.org/donate" target="_blank">Visit</a>
+</div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Charity Connect India — Empower Change. Inspire Hope.</p>
+  </footer>
+
+  <script>
+    function switchTab(index) {
+      document.querySelectorAll('.tab').forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+      });
+
+      document.querySelectorAll('.tab-content').forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
