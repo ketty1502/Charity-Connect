@@ -138,22 +138,68 @@
   </header>
 
   <nav>
-    <button class="tab active" onclick="switchTab(0)">Most Trusted</button>
-    <button class="tab" onclick="switchTab(1)">Medical Care</button>
-    <button class="tab" onclick="switchTab(2)">Educational</button>
-    <button class="tab" onclick="switchTab(3)">Homeless</button>
-    <button class="tab" onclick="switchTab(4)">Animal Welfare</button>
-    <button class="tab" onclick="switchTab(5)">Disaster Relief</button>
-    <button class="tab" onclick="switchTab(6)">Elderly Welfare</button>
+    <button class="tab active" onclick="switchTab(0)">About Us</button>
+    <button class="tab" onclick="switchTab(1)">Most Trusted</button>
+    <button class="tab" onclick="switchTab(2)">Medical Care</button>
+    <button class="tab" onclick="switchTab(3)">Educational</button>
+    <button class="tab" onclick="switchTab(4)">Homeless</button>
+    <button class="tab" onclick="switchTab(5)">Animal Welfare</button>
+    <button class="tab" onclick="switchTab(6)">Disaster Relief</button>
+    <button class="tab" onclick="switchTab(7)">Elderly Welfare</button>
   </nav>
 
   <!-- Tab Contents -->
   <main>
     <section class="tab-content active">
+      <div style="max-width: 800px; margin: auto; padding: 1rem;">
+        <h2 style="color: var(--accent); margin-bottom: 1rem;">About Charity Connect India</h2>
+        <p style="font-size: 1rem; color: #333; line-height: 1.6;">
+          Charity Connect India is a dedicated platform that brings together genuine NGOs and compassionate donors across the country. 
+          Our mission is to bridge the gap between those who want to help and those who need it, ensuring every contribution reaches a meaningful cause.
+        </p>
+        
+        <p style="font-size: 1rem; color: #333; line-height: 1.6; margin-top: 1rem;">
+          We understand that choosing the right organization to support can be overwhelming. That’s why we personally verify every NGO listed on our platform. 
+          From child education and elderly care to disaster relief and environmental protection — we cover a wide range of causes that matter.
+        </p>
+
+        <p style="font-size: 1rem; color: #333; line-height: 1.6; margin-top: 1rem;">
+          Our platform allows you to:
+          <ul style="padding-left: 1.5rem; color: #333; font-size: 1rem; line-height: 1.6;">
+            <li>Discover NGOs by location, cause, or trust rating</li>
+            <li>Read real stories and updates from the ground</li>
+            <li>Donate securely and transparently</li>
+            <li>Track your impact and stay connected</li>
+          </ul>
+        </p>
+
+        <p style="font-size: 1rem; color: #333; line-height: 1.6; margin-top: 1rem;">
+          At Charity Connect India, we believe in kindness, accountability, and action. 
+          Whether you're donating for the first time or regularly supporting causes, we’re here to make sure your help truly counts.
+        </p>
+
+        <p style="font-size: 1rem; color: #333; line-height: 1.6; margin-top: 1rem;">
+          Join us in building a more compassionate India — one connection at a time.
+        </p>
+        <div style="text-align: center; margin-top: 2rem;">
+          <button id="continueToTrusted" style="
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent, #4CAF50);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+          ">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="most-trusted" class="tab-content">
       <!-- Most Trusted -->
-      <div class="org-card">
+      <div  class="org-card">
         <div class="org-title">Team Everest</div>
-        <div class="org-desc">Change a child's life now!We inspire everyone to volunteer and create a culture of giving.</div>
+        <div class="org-desc">Change a child's life now! We inspire everyone to volunteer and create a culture of giving.</div>
         <a class="visit-btn" href="https://www.teameverest.ngo/donate" target="_blank">Visit</a>
       </div>
       <div class="org-card">
@@ -161,25 +207,30 @@
         <div class="org-desc">A powerful grassroots movement using urban surplus for rural development across India.</div>
         <a class="visit-btn" href="https://goonj.org/donate/" target="_blank">Visit</a>
       </div>
-    <div class="org-card">
-  <div class="org-title">The Akshaya Patra Foundation</div>
-  <div class="org-desc">Provides mid-day meals to millions of underprivileged children across India to ensure access to education and proper nutrition.</div>
-  <a class="visit-btn" href="https://www.akshayapatra.org/onlinedonations" target="_blank">Visit</a>
-</div>
+      <div class="org-card">
+        <div class="org-title">The Akshaya Patra Foundation</div>
+        <div class="org-desc">Provides mid-day meals to millions of underprivileged children across India to ensure access to education and proper nutrition.</div>
+        <a class="visit-btn" href="https://www.akshayapatra.org/onlinedonations" target="_blank">Visit</a>
+      </div>
 
-<div class="org-card">
-  <div class="org-title">Smile Foundation</div>
-  <div class="org-desc">Focuses on empowering underprivileged children, youth, and women through education, healthcare, and skill development programs.</div>
-  <a class="visit-btn" href="https://www.smilefoundationindia.org/donation/#donate-online   " target="_blank">Visit</a>
-</div>
+      <div class="org-card">
+        <div class="org-title">Smile Foundation</div>
+        <div class="org-desc">Focuses on empowering underprivileged children, youth, and women through education, healthcare, and skill development programs.</div>
+        <a class="visit-btn" href="https://www.smilefoundationindia.org/donation/#donate-online" target="_blank">Visit</a>
+      </div>
 
-<div class="org-card">
-  <div class="org-title">CRY - Child Rights and You</div>
-  <div class="org-desc">Focuses on child welfare by providing healthcare, education, and protecting the rights of underprivileged children across India.</div>
-  <a class="visit-btn" href="https://www.cry.org/donate" target="_blank">Visit</a>
-</div>
+      <div class="org-card">
+        <div class="org-title">CRY - Child Rights and You</div>
+        <div class="org-desc">Focuses on child welfare by providing healthcare, education, and protecting the rights of underprivileged children across India.</div>
+        <a class="visit-btn" href="https://www.cry.org/donate" target="_blank">Visit</a>
+      </div>
+
+      <div class="org-card">
+        <div class="org-title">Oxfam India</div>
+        <div class="org-desc">Works on poverty alleviation, humanitarian emergencies, and sustainable development programs across India.</div>
+        <a class="visit-btn" href="https://www.oxfamindia.org/donate" target="_blank">Visit</a>
+      </div>
     </section>
-
     <section class="tab-content">
       <!-- Medical -->
       <div class="org-card">
@@ -391,19 +442,24 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Charity Connect India — Empower Change. Inspire Hope.</p>
+    <p>&copy; 2025 Charity Connect India. All rights reserved.</p>
   </footer>
 
   <script>
     function switchTab(index) {
-      document.querySelectorAll('.tab').forEach((tab, i) => {
-        tab.classList.toggle('active', i === index);
-      });
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
 
-      document.querySelectorAll('.tab-content').forEach((tab, i) => {
-        tab.classList.toggle('active', i === index);
-      });
+      tabs.forEach(tab => tab.classList.remove("active"));
+      tabs[index].classList.add("active");
+
+      contents.forEach(content => content.classList.remove("active"));
+      contents[index].classList.add("active");
     }
+
+    document.getElementById("continueToTrusted").addEventListener("click", function() {
+      switchTab(1); // Switch to "Most Trusted" tab when the button is clicked
+    });
   </script>
 </body>
 </html>
